@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c4ty58pr5j20l"]
+
+[ext_resource type="Script" uid="uid://bt8fuo2d8bqax" path="res://scripts/taco.gd" id="1_glng8"]
+[ext_resource type="Texture2D" uid="uid://dnfrfej78vvpl" path="res://assets/sprites/knight.png" id="2_glng8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h621j"]
+radius = 13.038404
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkmte"]
+atlas = ExtResource("2_glng8")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h621j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkmte")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="minigame_taco" type="Area2D" unique_id=1391137334]
+script = ExtResource("1_glng8")
+taco_value = 0
+starts_minigame = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=574188384]
+position = Vector2(20, 14)
+shape = SubResource("CircleShape2D_h621j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1206595789]
+position = Vector2(19, 1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_h621j")
+autoplay = "default"
+frame_progress = 0.72932184
