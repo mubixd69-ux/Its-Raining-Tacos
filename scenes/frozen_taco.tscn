@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://baq8ilcoa8iiq"]
+
+[ext_resource type="Script" uid="uid://bt8fuo2d8bqax" path="res://scripts/taco.gd" id="1_kndkd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h621j"]
+radius = 12.0415945
+
+[node name="frozen taco" type="Area2D" unique_id=1391137334 groups=["tacos"]]
+script = ExtResource("1_kndkd")
+ignores_multiplier = true
+is_frozen_taco = true
+freezes_time = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=574188384]
+position = Vector2(20, 13)
+shape = SubResource("CircleShape2D_h621j")
+
+[node name="Label" type="Label" parent="." unique_id=1013517589]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 24.0
+text = "freze"
