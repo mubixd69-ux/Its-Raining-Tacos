@@ -18,10 +18,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	scale = Vector2(GameData.player_scale, GameData.player_scale)
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
 	if direction != 0:
-		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
+		velocity.x = move_toward(velocity.x, direction * GameData.player_speed, acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, friction * delta)
 	
@@ -48,13 +49,18 @@ func _on_area_entered(area: Area2D) -> void:
 		elif combo_count >= 5:
 			multipliar= 2
 		
-		
+		var taco_value = 1
+		if "taco_value" in area:
+			taco_value = area.taco_value
+			
 		area.get_caught(multipliar)
 		
 		if hud and hud.has_method("update_tacos"):
 			hud.update_tacos()
-
-		spawn_floating_text(multipliar, combo_count)
+			
+		var total_earned = taco_value * multipliar
+		spawn_floating_text(total_earned, combo_count)
+		
 func reset_combo() -> void:
 	combo_count = 0
 	
@@ -71,7 +77,7 @@ func spawn_floating_text(amount: int, combo: int) -> void:
 func spawn_bag_full_text() -> void:
 	var popup = Label.new()
 	popup.text = "BAG FULL!"
-	popup.modulate = Color(1.542, 0.0, 0.0, 0.2)
+	popup.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	popup.global_position = global_position + Vector2(-30, -50)
 	get_tree().current_scene.add_child(popup)
 	

@@ -1,23 +1,21 @@
 [gd_scene format=3 uid="uid://ciqukdn3f4v00"]
 
 [ext_resource type="Script" uid="uid://ckt0rxvitvgj5" path="res://scripts/spawner.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://q21o424aio3m" path="res://scenes/resturant.tscn" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://clkgu8jwn7caf" path="res://scenes/bag.tscn" id="2_0wfyh"]
-[ext_resource type="Script" uid="uid://c52lcxawoe63c" path="res://scripts/Hats/hacka.gd" id="2_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cc4o3k0ti6iyk" path="res://scenes/hud.tscn" id="3_sugp2"]
-[ext_resource type="Script" uid="uid://cl2mh0mnp8lig" path="res://scripts/Hats/pro.gd" id="3_tipki"]
 [ext_resource type="Script" uid="uid://uossa1k8xcvl" path="res://scenes/changescene1.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://dt431gigwdtis" path="res://scenes/hud.gd" id="4_tbgi4"]
-[ext_resource type="Script" uid="uid://d3et4lha8n47y" path="res://scripts/op.gd" id="6_tefeu"]
-[ext_resource type="Script" uid="uid://dw0xiitg3euah" path="res://scripts/upgrade_frozen.gd" id="10_choun"]
 [ext_resource type="Script" uid="uid://chykt2wyf511y" path="res://scenes/button.gd" id="11_dp3eg"]
-[ext_resource type="Script" uid="uid://chp1au741bt6i" path="res://scripts/upgrade_spicy.gd" id="11_eb6dy"]
-[ext_resource type="Script" uid="uid://b3438yd0khfhq" path="res://scripts/upgrade_gold.gd" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://dgof5imxg0u2e" path="res://scripts/sell_all_tacos.gd" id="12_0ld40"]
 [ext_resource type="Texture2D" uid="uid://bf675jv26dg1l" path="res://Assets/basic black/button square idle.png" id="13_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://col5v7mnqcegs" path="res://Assets/basic black/button square hover.png" id="13_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://dkbbp17c04y5p" path="res://scenes/parallax_background.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://b6tcuxm33e7r" path="res://scripts/freeze_overlay.gd" id="14_jkv2x"]
 [ext_resource type="Shader" uid="uid://bpbdp20c32crr" path="res://scripts/main.gdshader" id="15_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://bodn8ufdidass" path="res://Assets/basic black/button square clicked.png" id="17_0ld40"]
+[ext_resource type="Script" uid="uid://dipgrogqtcd8b" path="res://scripts/ShopUpgradeButton.gd" id="21_jscy8"]
+[ext_resource type="Texture2D" uid="uid://dx1mefabchy7p" path="res://Assets/basic black/pop up window.png" id="21_yc10j"]
+[ext_resource type="FontFile" uid="uid://bdq47xn8cumpa" path="res://Assets/fonts/LilitaOne-Regular.ttf" id="22_jscy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e6q6n"]
 shader = ExtResource("15_jbj1t")
@@ -26,7 +24,58 @@ shader_parameter/inner_radius = 0.450000021375
 shader_parameter/outer_radius = 0.800000038
 shader_parameter/opacity = 0.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jscy8"]
+texture = ExtResource("13_dp3eg")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pm3ni"]
+texture = ExtResource("17_0ld40")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og1vs"]
+texture = ExtResource("13_gqmmt")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muem4"]
+texture = ExtResource("13_dp3eg")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
+content_margin_top = 10.0
+texture = ExtResource("17_0ld40")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
+texture = ExtResource("13_gqmmt")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
 [node name="main" type="Node2D" unique_id=879004149]
+
+[node name="HUD" parent="." unique_id=846193636 instance=ExtResource("3_sugp2")]
+z_index = 3
+offset_left = -8.0
+offset_top = -3.0
+offset_right = -8.0
+offset_bottom = -3.0
+script = ExtResource("4_tbgi4")
 
 [node name="ParallaxBackground" parent="." unique_id=1443026022 instance=ExtResource("13_trceg")]
 
@@ -40,105 +89,12 @@ ui = NodePath("../HUD")
 position = Vector2(572, 577)
 hud = NodePath("../HUD")
 
-[node name="HUD" parent="." unique_id=846193636 instance=ExtResource("3_sugp2")]
-offset_left = -8.0
-offset_top = -3.0
-offset_right = -8.0
-offset_bottom = -3.0
-script = ExtResource("4_tbgi4")
-
 [node name="Change scene" type="Button" parent="." unique_id=1521850587]
 offset_left = 556.0
 offset_top = 60.0
 offset_right = 945.0
 offset_bottom = 353.0
 script = ExtResource("4_jyhfs")
-
-[node name="op" type="Button" parent="." unique_id=124568209]
-offset_left = 284.0
-offset_top = 309.0
-offset_right = 399.0
-offset_bottom = 384.0
-text = "op nopi"
-script = ExtResource("6_tefeu")
-
-[node name="hacka" type="Button" parent="." unique_id=1264465913]
-offset_left = 284.0
-offset_top = 235.0
-offset_right = 399.0
-offset_bottom = 310.0
-text = "Hacka Backa
-"
-script = ExtResource("2_o6xl0")
-
-[node name="pro" type="Button" parent="." unique_id=222222256]
-offset_left = 283.0
-offset_top = 164.0
-offset_right = 398.0
-offset_bottom = 239.0
-text = "Pro pi popi"
-script = ExtResource("3_tipki")
-
-[node name="Resturant" parent="." unique_id=314803452 instance=ExtResource("1_tefeu")]
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Resturant" unique_id=1259572738]
-visible = false
-
-[node name="money" type="Label" parent="Resturant/CanvasLayer2" unique_id=1081005272]
-z_index = 1
-offset_left = 337.0
-offset_top = 57.0
-offset_right = 686.0
-offset_bottom = 240.0
-
-[node name="Button" type="Button" parent="Resturant/CanvasLayer2" unique_id=1174714331]
-offset_left = 50.0
-offset_top = 144.0
-offset_right = 284.0
-offset_bottom = 263.0
-script = ExtResource("11_dp3eg")
-
-[node name="Sell all tacos" type="Button" parent="Resturant/CanvasLayer2" unique_id=44864811]
-offset_left = 54.0
-offset_top = 37.0
-offset_right = 279.0
-offset_bottom = 143.0
-text = "Sell all
-"
-script = ExtResource("12_0ld40")
-
-[node name="TextureRect" type="TextureRect" parent="Resturant/CanvasLayer2" unique_id=2048051485]
-z_index = -1
-offset_left = -169.0
-offset_top = -201.0
-offset_right = 1320.0
-offset_bottom = 804.0
-mouse_filter = 2
-texture = ExtResource("13_dp3eg")
-
-[node name="upgrade_frozen" type="Button" parent="." unique_id=1602698884]
-offset_left = 193.0
-offset_top = 15.0
-offset_right = 276.0
-offset_bottom = 62.0
-text = "frozen"
-script = ExtResource("10_choun")
-
-[node name="upgrade_spicy" type="Button" parent="." unique_id=630024993]
-offset_left = 193.0
-offset_top = 62.0
-offset_right = 276.0
-offset_bottom = 109.0
-text = "spicy"
-script = ExtResource("11_eb6dy")
-
-[node name="upgrade_gold" type="Button" parent="." unique_id=674427994]
-offset_left = 193.0
-offset_top = 109.0
-offset_right = 276.0
-offset_bottom = 156.0
-text = "gold"
-script = ExtResource("11_ya4ey")
 
 [node name="FreezeOverlay" type="CanvasLayer" parent="." unique_id=1287071957]
 unique_name_in_owner = true
@@ -153,11 +109,320 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Resturant" type="CanvasLayer" parent="." unique_id=1888464337]
+visible = false
+
+[node name="money" type="Label" parent="Resturant" unique_id=841459116]
+z_index = 1
+offset_left = 337.0
+offset_top = 57.0
+offset_right = 686.0
+offset_bottom = 240.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Resturant" unique_id=555977322]
+offset_left = 459.0
+offset_top = 133.0
+offset_right = 693.0
+offset_bottom = 252.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pm3ni")
+theme_override_styles/hover = SubResource("StyleBoxTexture_og1vs")
+text = "Back To Space"
+script = ExtResource("11_dp3eg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Resturant/Button" unique_id=1800810019]
+position = Vector2(116, 31)
+scale = Vector2(0.4, 0.4)
+
+[node name="Sell all tacos" type="Button" parent="Resturant" unique_id=174645078]
+offset_left = 456.5
+offset_top = 22.0
+offset_right = 681.5
+offset_bottom = 128.0
+theme_override_constants/outline_size = 6
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+text = "Sell all
+"
+script = ExtResource("12_0ld40")
+metadata/_edit_use_anchors_ = true
+
+[node name="frozen_upgrade" type="Button" parent="Resturant" unique_id=857037908]
+anchors_preset = -1
+anchor_left = -0.019097222
+anchor_right = 0.019097222
+offset_left = 32.0
+offset_top = 257.0
+offset_right = 257.0
+offset_bottom = 363.0
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0ld40")
+script = ExtResource("21_jscy8")
+item_name = "Frozen chance"
+price = 10.0
+max_percent = 20.0
+effect_value = 2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Resturant/frozen_upgrade" unique_id=1382834053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = -11.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("22_jscy8")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="golden_upgrade" type="Button" parent="Resturant" unique_id=339736841]
+offset_left = 10.0
+offset_top = 357.0
+offset_right = 279.0
+offset_bottom = 463.0
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0ld40")
+script = ExtResource("21_jscy8")
+item_name = "Golden Chance"
+type = 1
+price = 20.0
+max_percent = 20.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Resturant/golden_upgrade" unique_id=1541851798]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = -11.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("22_jscy8")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="spicy_upgrade" type="Button" parent="Resturant" unique_id=1669126274]
+offset_left = 10.0
+offset_top = 462.0
+offset_right = 279.0
+offset_bottom = 568.0
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0ld40")
+script = ExtResource("21_jscy8")
+item_name = "Spicy Chance"
+type = 2
+price = 10.0
+max_percent = 10.0
+effect_value = 2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Resturant/spicy_upgrade" unique_id=528600746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = -11.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("22_jscy8")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="op_nopi" type="Button" parent="Resturant" unique_id=176208622]
+offset_left = 796.0
+offset_top = 459.0
+offset_right = 1142.0
+offset_bottom = 565.0
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0ld40")
+script = ExtResource("21_jscy8")
+item_name = "Better Bag"
+type = 3
+price = 1.0
+is_one_time_buy = true
+speed_increase = 100.0
+scale_increase = 0.1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Resturant/op_nopi" unique_id=200646498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("22_jscy8")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="hacka_backa" type="Button" parent="Resturant" unique_id=1649507455]
+anchors_preset = -1
+anchor_left = -0.053819444
+anchor_top = -0.018518519
+anchor_right = 0.11892361
+anchor_bottom = 0.054012347
+offset_left = 858.0
+offset_top = 367.0
+offset_right = 1005.0
+offset_bottom = 426.0
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0ld40")
+text = "
+
+"
+script = ExtResource("21_jscy8")
+item_name = "Best Bag"
+type = 3
+price = 1.0
+is_one_time_buy = true
+speed_increase = 500.0
+scale_increase = 0.4
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Resturant/hacka_backa" unique_id=1834918564]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("22_jscy8")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="propi nopi" type="Button" parent="Resturant" unique_id=2049081398]
+offset_left = 796.0
+offset_top = 253.0
+offset_right = 1142.0
+offset_bottom = 359.0
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_muem4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp3eg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0ld40")
+script = ExtResource("21_jscy8")
+item_name = "Even Better Bag"
+type = 3
+price = 1.0
+is_one_time_buy = true
+speed_increase = 250.0
+scale_increase = 0.25
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Resturant/propi nopi" unique_id=124643425]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 15.0
+offset_right = -12.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("22_jscy8")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Resturant" unique_id=945190256]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 20.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_yc10j")
+region_rect = Rect2(6, 6, 968, 640)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="TimeLabel" type="Label" parent="Resturant" unique_id=2060266824]
+visible = false
+offset_left = 151.0
+offset_top = 115.0
+offset_right = 185.0
+offset_bottom = 136.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("22_jscy8")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Change scene" to="Change scene" method="_on_pressed"]
-[connection signal="pressed" from="op" to="op" method="_on_pressed"]
-[connection signal="pressed" from="hacka" to="hacka" method="_on_pressed"]
-[connection signal="pressed" from="pro" to="pro" method="_on_pressed"]
-[connection signal="pressed" from="Resturant/CanvasLayer2/Button" to="Resturant/CanvasLayer2/Button" method="_on_pressed"]
-[connection signal="pressed" from="upgrade_frozen" to="upgrade_frozen" method="_on_pressed"]
-[connection signal="pressed" from="upgrade_spicy" to="upgrade_spicy" method="_on_pressed"]
-[connection signal="pressed" from="upgrade_gold" to="upgrade_gold" method="_on_pressed"]
+[connection signal="pressed" from="Resturant/Button" to="Resturant/Button" method="_on_pressed"]
