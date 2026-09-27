@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://ded1vk02aaau6"]
 
-[ext_resource type="Script" uid="uid://bt8fuo2d8bqax" path="res://scripts/taco.gd" id="1_2m1gf"]
 [ext_resource type="Script" uid="uid://bt8fuo2d8bqax" path="res://scripts/taco.gd" id="1_bmnu8"]
-[ext_resource type="Texture2D" uid="uid://v44ck8c5dk7" path="res://Assets/99_taco_frozen.png" id="2_3n84q"]
+[ext_resource type="Texture2D" uid="uid://v44ck8c5dk7" path="res://assets/99_taco_frozen.png" id="2_3n84q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h621j"]
 radius = 12.0415945
 
-[node name="frozen taco" type="Area2D" unique_id=1391137334 groups=["tacos"]]
-script = ExtResource("1_2m1gf")
+[node name="frozen taco" type="Area2D" unique_id=1391137334]
+script = ExtResource("1_bmnu8")
 ignores_multiplier = true
 is_frozen_taco = true
 freezes_time = true
