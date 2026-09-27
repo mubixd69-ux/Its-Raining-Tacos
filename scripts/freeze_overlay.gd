@@ -10,7 +10,7 @@ func _ready() -> void:
 func trigger_freeze_effect(duration: float = 5.0) -> void:
 	if tween and tween.is_running():
 		tween.kill()
-	
+	print(1)
 	tween = create_tween()
 	
 	tween.tween_method(set_freeze_opacity, 0.0, 1.0, 0.3)
