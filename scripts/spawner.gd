@@ -3,7 +3,7 @@ extends Node2D
 const TACO = preload("uid://oyjm4g70q2t7")
 const GOLDEN_TACO = preload("res://scenes/goldentaco.tscn")
 const SPICY_TACO = preload("res://scenes/spicy.tscn")
-const FROZEN_TACO = preload("res://scenes/frozentaco.tscn")
+const FROZEN_TACO = preload("res://scenes/frozen_taco.tscn")
 
 @export var bag: Area2D
 @export var ui: Control
