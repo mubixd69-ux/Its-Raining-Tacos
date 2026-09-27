@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cssctp6cs10tc"
-path="res://.godot/imported/icons pause.png-d25f248fb75f10571eca1c90a3a26786.ctex"
+path="res://.godot/imported/icons pause.png-6720c8f69f1b2bd45b7729fb54e65581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/basic black/icons pause.png"
-dest_files=["res://.godot/imported/icons pause.png-d25f248fb75f10571eca1c90a3a26786.ctex"]
+source_file="res://assets/basic black/icons pause.png"
+dest_files=["res://.godot/imported/icons pause.png-6720c8f69f1b2bd45b7729fb54e65581.ctex"]
 
 [params]
 

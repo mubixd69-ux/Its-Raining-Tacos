@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc8fm1tcm3ri3"
-path="res://.godot/imported/button wider hover.png-1a5c881a695cabcf8a76906ac130b5b9.ctex"
+path="res://.godot/imported/button wider hover.png-ec51b1d5bcdb93e2fe7bf9ae50d27ef7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/basic black/button wider hover.png"
-dest_files=["res://.godot/imported/button wider hover.png-1a5c881a695cabcf8a76906ac130b5b9.ctex"]
+source_file="res://assets/basic black/button wider hover.png"
+dest_files=["res://.godot/imported/button wider hover.png-ec51b1d5bcdb93e2fe7bf9ae50d27ef7.ctex"]
 
 [params]
 
