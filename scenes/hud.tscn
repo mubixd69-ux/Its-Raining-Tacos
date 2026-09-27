@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc4o3k0ti6iyk"]
 
 [ext_resource type="Script" uid="uid://coc07l5asc3cd" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://bdq47xn8cumpa" path="res://Assets/fonts/LilitaOne-Regular.ttf" id="2_oo0fn"]
 
 [node name="HUD" type="Control" unique_id=846193636]
 layout_mode = 3
@@ -16,5 +17,6 @@ script = ExtResource("1_ahhtf")
 [node name="TacoLabel" type="Label" parent="CanvasLayer" unique_id=1747203799]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 32
 text = "Tacos: 0"
