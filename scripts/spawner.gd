@@ -3,7 +3,8 @@ extends Node2D
 const TACO = preload("uid://oyjm4g70q2t7")
 const GOLDEN_TACO = preload("res://scenes/goldentaco.tscn")
 const SPICY_TACO = preload("res://scenes/spicy.tscn")
-const FROZEN_TACO = preload("res://scenes/frozen_taco.tscn")
+const FROZEN_TACO = preload("res://frozentaco.tscn")
+const MINIGAME_TACO = preload("res://scenes/minigame_taco.tscn")
 
 @export var bag: Area2D
 @export var ui: Control
@@ -22,12 +23,15 @@ func spawn_tacos() -> void:
 	if bag and "combo_count" in bag:
 		combo = bag.combo_count
 
+
 	if combo >= 5 and roll < GameData.frozen_chance:
 		taco = FROZEN_TACO.instantiate()
-	elif roll < GameData.golden_chance:
+	elif roll < GameData.frozen_chance + GameData.golden_chance:
 		taco = GOLDEN_TACO.instantiate()
-	elif roll < GameData.spicy_chance:
+	elif roll < GameData.frozen_chance + GameData.golden_chance + GameData.spicy_chance:
 		taco = SPICY_TACO.instantiate()
+	elif roll < GameData.frozen_chance + GameData.golden_chance + GameData.spicy_chance + GameData.minigame_taco_chance:
+		taco = MINIGAME_TACO.instantiate()
 	else:
 		taco = TACO.instantiate()
 
@@ -47,6 +51,20 @@ func spawn_tacos() -> void:
 	taco.tree_exited.connect(_on_taco_despawned)
 	add_child(taco)
 
+func send_to_minigame() -> void:
+	print("MINIGAME STARTING!")
+	$"../CanvasLayer/AnimationPlayer".play("fade_black")
+	await  $"../CanvasLayer/AnimationPlayer".animation_finished
+	call_deferred("_change_to_minigame")
+
+
+func _change_to_minigame() -> void:
+	get_tree().change_scene_to_file("res://platformer.tscn")
+	$"../CanvasLayer/AnimationPlayer".play("fade_out")
+	await  $"../CanvasLayer/AnimationPlayer".animation_finished
+
+	
+	
 func activate_freeze() -> void:
 	freeze_active = true
 	
