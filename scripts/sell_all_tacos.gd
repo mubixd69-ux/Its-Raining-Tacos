@@ -1,5 +1,7 @@
 extends Button
 
+@onready var hud: Control = $"../../HUD"
+
 @export var ui: Control
 var random_price: float = 2.0
 var price_timer: Timer
@@ -35,7 +37,7 @@ func _pressed() -> void:
 	GameData.taco_count = 0
 	
 	if has_node("../money"):
-		$"../money".text = str(snapped(GameData.taco_coins, 0.01))
+		$"../money".text = "Taco Coins: " + str(snapped(GameData.taco_coins, 0.01))
 	
 	spawn_floating_text("+%.2f Coins!" % earned_coins, Color(0.2, 1.0, 0.2))
 
@@ -57,3 +59,5 @@ func spawn_floating_text(msg: String, text_color: Color) -> void:
 	tween.tween_property(float_label, "position:y", float_label.position.y - 80.0, 0.8).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.parallel().tween_property(float_label, "modulate:a", 0.0, 0.8).set_ease(Tween.EASE_IN)
 	tween.tween_callback(float_label.queue_free)
+	
+	hud.update_tacos()
