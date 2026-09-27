@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wxhle2ldxol7"
-path="res://.godot/imported/99_taco_spicy.png-fd7fa21a208df5aa6fca6c6be438c462.ctex"
+path="res://.godot/imported/99_taco_spicy.png-2de43edfaab87e021fd5291acc92f42c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/99_taco_spicy.png"
-dest_files=["res://.godot/imported/99_taco_spicy.png-fd7fa21a208df5aa6fca6c6be438c462.ctex"]
+source_file="res://assets/99_taco_spicy.png"
+dest_files=["res://.godot/imported/99_taco_spicy.png-2de43edfaab87e021fd5291acc92f42c.ctex"]
 
 [params]
 

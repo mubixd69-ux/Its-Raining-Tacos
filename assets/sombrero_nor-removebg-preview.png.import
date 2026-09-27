@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh1da3xrywsqi"
-path="res://.godot/imported/99_taco.png-06e9d7a57f18ae8b5d459ed29c5684cf.ctex"
+uid="uid://co0mf3wqhf6qj"
+path="res://.godot/imported/sombrero_nor-removebg-preview.png-a1b80410c7c250aa813b9551ec3a8bc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/99_taco.png"
-dest_files=["res://.godot/imported/99_taco.png-06e9d7a57f18ae8b5d459ed29c5684cf.ctex"]
+source_file="res://assets/sombrero_nor-removebg-preview.png"
+dest_files=["res://.godot/imported/sombrero_nor-removebg-preview.png-a1b80410c7c250aa813b9551ec3a8bc7.ctex"]
 
 [params]
 
