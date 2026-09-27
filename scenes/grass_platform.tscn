@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c2722q1w30xvh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2dib1"]
+load_path = "res://.godot/imported/platforms.png-fdcd4bebb7ecd5fd1592abe643f480f5.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h621j"]
+size = Vector2(32, 8.5)
+
+[node name="sand_platform" type="AnimatableBody2D" unique_id=494730702]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=911947793]
+texture = SubResource("CompressedTexture2D_2dib1")
+region_enabled = true
+region_rect = Rect2(15.626087, 16.063202, 32.65306, 9.489801)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=528655299]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_h621j")
+one_way_collision = true
