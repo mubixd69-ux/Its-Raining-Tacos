@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ded1vk02aaau6"]
 
 [ext_resource type="Script" uid="uid://bt8fuo2d8bqax" path="res://scripts/taco.gd" id="1_bmnu8"]
+[ext_resource type="Texture2D" uid="uid://v44ck8c5dk7" path="res://Assets/99_taco_frozen.png" id="2_3n84q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h621j"]
 radius = 12.0415945
@@ -15,9 +16,8 @@ freezes_time = true
 position = Vector2(20, 13)
 shape = SubResource("CircleShape2D_h621j")
 
-[node name="Label" type="Label" parent="." unique_id=1013517589]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 41.0
-offset_bottom = 24.0
-text = "freze"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=368615269]
+texture_filter = 1
+position = Vector2(19, 14)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_3n84q")

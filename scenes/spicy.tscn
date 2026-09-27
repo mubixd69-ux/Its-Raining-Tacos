@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5kjrn8hs5dxh"]
 
 [ext_resource type="Script" uid="uid://bt8fuo2d8bqax" path="res://scripts/taco.gd" id="1_sgo3f"]
+[ext_resource type="Texture2D" uid="uid://wxhle2ldxol7" path="res://Assets/99_taco_spicy.png" id="2_oer2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h621j"]
 radius = 12.0415945
@@ -14,9 +15,8 @@ ignores_multiplier = true
 position = Vector2(20, 13)
 shape = SubResource("CircleShape2D_h621j")
 
-[node name="Label" type="Label" parent="." unique_id=1013517589]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 41.0
-offset_bottom = 24.0
-text = "spicy"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979711305]
+texture_filter = 1
+position = Vector2(20, 14)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_oer2a")
