@@ -3,6 +3,9 @@
 [![Made with Godot 4](https://img.shields.io/badge/Made%20with-Godot%204-478cbf?logo=godotengine&logoColor=white)](https://godotengine.org)
 [![Play on itch.io](https://img.shields.io/badge/Play%20on-itch.io-FA5C5C?logo=itchdotio&logoColor=white)](https://mubixd.itch.io/its-raining-tacos)
 
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/bf12f163-edc5-463d-bf97-a7f97478c4aa" />
+
+
 > 🎮 **Play in your browser:** [mubixd.itch.io/taco-catcher](https://mubixd.itch.io/taco-catcher)
 ---
 ## What is this???
